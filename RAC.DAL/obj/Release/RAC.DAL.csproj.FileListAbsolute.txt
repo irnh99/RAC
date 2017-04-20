@@ -3,3 +3,8 @@ d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.DAL\bin\Release\RAC
 d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.DAL\obj\Release\RAC.DAL.csprojResolveAssemblyReference.cache
 d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.DAL\obj\Release\RAC.DAL.dll
 d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.DAL\obj\Release\RAC.DAL.pdb
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\Release\RAC.DAL.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\Release\RAC.DAL.pdb
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\obj\Release\RAC.DAL.csprojResolveAssemblyReference.cache
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\obj\Release\RAC.DAL.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\obj\Release\RAC.DAL.pdb

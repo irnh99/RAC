@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-  <IisApp path="d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC\obj\Release\Package\PackageTmp" />
-  <setAcl path="d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
-  <setAcl path="d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+  <IisApp path="C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\obj\Release\Package\PackageTmp" />
+  <setAcl path="C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
 </sitemanifest>
