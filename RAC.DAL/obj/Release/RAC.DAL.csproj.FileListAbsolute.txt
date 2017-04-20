@@ -1,0 +1,5 @@
+d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.DAL\bin\Release\RAC.DAL.dll
+d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.DAL\bin\Release\RAC.DAL.pdb
+d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.DAL\obj\Release\RAC.DAL.csprojResolveAssemblyReference.cache
+d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.DAL\obj\Release\RAC.DAL.dll
+d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.DAL\obj\Release\RAC.DAL.pdb
