@@ -1,10 +1,45 @@
-d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.DAL\bin\Release\RAC.DAL.dll
-d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.DAL\bin\Release\RAC.DAL.pdb
-d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.DAL\obj\Release\RAC.DAL.csprojResolveAssemblyReference.cache
-d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.DAL\obj\Release\RAC.DAL.dll
-d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.DAL\obj\Release\RAC.DAL.pdb
-C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\Release\RAC.DAL.dll
-C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\Release\RAC.DAL.pdb
-C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\obj\Release\RAC.DAL.csprojResolveAssemblyReference.cache
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\csc.exe
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\csc.exe.config
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\csc.rsp
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\csi.exe
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\csi.rsp
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\System.AppContext.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\vbc.exe
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\vbc.exe.config
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\vbc.rsp
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\VBCSCompiler.exe
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\RAC.DAL.dll.config
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\RAC.DAL.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\RAC.DAL.pdb
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\EntityFramework.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\EntityFramework.SqlServer.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\Newtonsoft.Json.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\System.Net.Http.Formatting.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\System.Web.Http.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\System.Web.Http.WebHost.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\EntityFramework.xml
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\EntityFramework.SqlServer.xml
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\Newtonsoft.Json.xml
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\System.Net.Http.Formatting.xml
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\System.Web.Http.xml
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\System.Web.Http.WebHost.xml
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\obj\Release\RAC.DAL.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\obj\Release\RAC.DAL.pdb

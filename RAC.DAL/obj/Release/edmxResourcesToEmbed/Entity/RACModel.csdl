@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RACModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Access">
+    <Key>
+      <PropertyRef Name="IdAccess" />
+    </Key>
+    <Property Name="IdAccess" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUser" Type="Int32" />
+    <Property Name="IdArea" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Area" Relationship="Self.FK__Access__IdArea__4F7CD00D" FromRole="Access" ToRole="Area" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Access__IdUser__5070F446" FromRole="Access" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="IdArea" />
+    </Key>
+    <Property Name="IdArea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Descrition" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="Accesses" Relationship="Self.FK__Access__IdArea__4F7CD00D" FromRole="Area" ToRole="Access" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Pass" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="NoControl" Type="Int32" />
+    <Property Name="IdUserType" Type="Int32" />
+    <NavigationProperty Name="Accesses" Relationship="Self.FK__Access__IdUser__5070F446" FromRole="Users" ToRole="Access" />
+    <NavigationProperty Name="UserType" Relationship="Self.FK__Users__IdUserTyp__4CA06362" FromRole="Users" ToRole="UserType" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="IdUserType" />
+    </Key>
+    <Property Name="IdUserType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Users__IdUserTyp__4CA06362" FromRole="UserType" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK__Access__IdArea__4F7CD00D">
+    <End Role="Area" Type="Self.Area" Multiplicity="0..1" />
+    <End Role="Access" Type="Self.Access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="IdArea" />
+      </Principal>
+      <Dependent Role="Access">
+        <PropertyRef Name="IdArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Access__IdUser__5070F446">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Access" Type="Self.Access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="Access">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__IdUserTyp__4CA06362">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="IdUserType" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="IdUserType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RACEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accesses" EntityType="Self.Access" />
+    <EntitySet Name="Areas" EntityType="Self.Area" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+    <AssociationSet Name="FK__Access__IdArea__4F7CD00D" Association="Self.FK__Access__IdArea__4F7CD00D">
+      <End Role="Area" EntitySet="Areas" />
+      <End Role="Access" EntitySet="Accesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Access__IdUser__5070F446" Association="Self.FK__Access__IdUser__5070F446">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Access" EntitySet="Accesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__IdUserTyp__4CA06362" Association="Self.FK__Users__IdUserTyp__4CA06362">
+      <End Role="UserType" EntitySet="UserTypes" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

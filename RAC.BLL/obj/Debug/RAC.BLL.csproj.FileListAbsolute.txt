@@ -1,7 +1,0 @@
-d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.BLL\bin\Debug\RAC.BLL.dll
-d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.BLL\bin\Debug\RAC.BLL.pdb
-d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.BLL\bin\Debug\RAC.DAL.dll
-d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.BLL\bin\Debug\RAC.DAL.pdb
-d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.BLL\obj\Debug\RAC.BLL.csprojResolveAssemblyReference.cache
-d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.BLL\obj\Debug\RAC.BLL.dll
-d:\Users\irnh3\documents\visual studio 2015\Projects\RAC\RAC.BLL\obj\Debug\RAC.BLL.pdb

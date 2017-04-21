@@ -170,16 +170,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RAC.BLL\RAC.BLL.csproj">
-      <Project>{53acb2eb-36fd-4c42-a9d4-4f8e462ad2bd}</Project>
-      <Name>RAC.BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RAC.DAL\RAC.DAL.csproj">
-      <Project>{cc3d1915-496d-4bbd-8436-8a2e7702a534}</Project>
-      <Name>RAC.DAL</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
