@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAC", "RAC\RAC.csproj", "{AF0B3CAF-791B-446F-9EAB-040AF4DD1174}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAC.DAL", "RAC.DAL\RAC.DAL.csproj", "{E876DD1D-E3E0-45E5-B603-1AB8CD0AE4D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAC.DAL", "RAC.DAL\RAC.DAL.csproj", "{B3A548B6-86BB-4D9E-9978-8B09679BADF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{AF0B3CAF-791B-446F-9EAB-040AF4DD1174}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF0B3CAF-791B-446F-9EAB-040AF4DD1174}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF0B3CAF-791B-446F-9EAB-040AF4DD1174}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E876DD1D-E3E0-45E5-B603-1AB8CD0AE4D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E876DD1D-E3E0-45E5-B603-1AB8CD0AE4D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E876DD1D-E3E0-45E5-B603-1AB8CD0AE4D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E876DD1D-E3E0-45E5-B603-1AB8CD0AE4D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3A548B6-86BB-4D9E-9978-8B09679BADF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3A548B6-86BB-4D9E-9978-8B09679BADF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3A548B6-86BB-4D9E-9978-8B09679BADF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3A548B6-86BB-4D9E-9978-8B09679BADF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

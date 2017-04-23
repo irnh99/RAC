@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services;
 
 namespace RAC.Controllers
 {
@@ -19,11 +20,11 @@ namespace RAC.Controllers
         {
             return View();
         }
-
-        // GET: Home/Create
-        public ActionResult Create()
+        // GET: Home/Details/5
+        [HttpGet]
+        public JsonResult Checkmate()
         {
-            return View();
+            return Json("its ok",JsonRequestBehavior.AllowGet);
         }
 
         // POST: Home/Create

@@ -77,16 +77,12 @@ C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\Microsoft.AI.WindowsServer.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\Microsoft.ApplicationInsights.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\RAC.BLL.dll
-C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\RAC.DAL.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\System.Web.Helpers.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\System.Web.Mvc.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\System.Web.Razor.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\System.Web.Webpages.Deployment.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\System.Web.Webpages.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\System.Web.Webpages.Razor.dll
-C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\RAC.BLL.pdb
-C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\RAC.DAL.pdb
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\AWSSDK.Core.pdb
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\AWSSDK.Core.xml
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\Microsoft.AI.DependencyCollector.xml
@@ -101,6 +97,6 @@ C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\System.Web.Webpages.Deployment
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\System.Web.Webpages.Razor.xml
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\System.Web.Helpers.xml
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\bin\System.Web.Mvc.xml
-C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\obj\Release\RAC.csprojResolveAssemblyReference.cache
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\obj\Release\RAC.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\obj\Release\RAC.pdb
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC\obj\Release\RAC.csprojResolveAssemblyReference.cache
