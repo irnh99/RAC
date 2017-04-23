@@ -1,89 +1,143 @@
-﻿using System;
+﻿using RAC.DAL.Entity;
+using RAC.DAL.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace RAC.DAL.Controllers
 {
     public class AreasController : Controller
     {
-        // GET: Areas
-        public ActionResult Index()
+        private RACEntities db = new RACEntities();
+
+        /// <summary>
+        /// Method for pasing Iquerable to List of Area vm
+        /// </summary>
+        /// <param name="usersDb"></param>
+        /// <returns></returns>
+        private List<AreaVM> ToVM(IQueryable<Area> areasDb)
         {
-            return View();
+
+            List<AreaVM> areasVm;
+            areasVm = areasDb.Select(x => new AreaVM
+            {
+                IdArea = x.IdArea,
+                Descrition = x.Descrition,
+                Name = x.Name,
+                Status = x.Status
+            }).ToList();
+            return areasVm;
+        }
+
+        /// <summary>
+        /// Method for pasing Area entity to of ARea vm
+        /// </summary>
+        /// <param name="usersDb"></param>
+        /// <returns></returns>
+        private AreaVM ToVM(Area areaDb)
+        {
+
+            AreaVM areaVm;
+            areaVm = new AreaVM
+            {
+                IdArea = areaDb.IdArea,
+                Descrition = areaDb.Descrition,
+                Name = areaDb.Name,
+                Status = areaDb.Status
+            };
+            return areaVm;
+        }
+        /// <summary>
+        /// Method for pasing Area entity to of Area vm
+        /// </summary>
+        /// <param name="usersDb"></param>
+        /// <returns></returns>
+        private Area ToEntity(AreaVM areaVm)
+        {
+
+            Area areaDb;
+            areaDb = new Area
+            {
+                IdArea = areaVm.IdArea,
+                Descrition = areaVm.Descrition,
+                Name = areaVm.Name,
+                Status = areaVm.Status
+            };
+            return areaDb;
+        }
+
+        // GET: Areas
+        [HttpGet]
+        public JsonResult Index()
+        {
+            IQueryable<Area> areaDb = db.Areas;
+            List<AreaVM> areaVm = ToVM(areaDb);
+            return Json(areaVm, JsonRequestBehavior.AllowGet);
         }
 
         // GET: Areas/Details/5
+        [HttpGet]
         public ActionResult Details(int id)
         {
-            return View();
+            Area areaDb = db.Areas.Find(id);
+            if (areaDb == null)
+            {
+                return Json("Area doesn't exit");
+            }
+            AreaVM areaVm = ToVM(areaDb);
+            return Json(areaVm, JsonRequestBehavior.AllowGet);
         }
 
         // GET: Areas/Create
-        public ActionResult Create()
+        [HttpPut]
+        public ActionResult Update(int id, AreaVM areaVm)
         {
-            return View();
-        }
+            Area areaDb = ToEntity(areaVm);
+            if (!ModelState.IsValid)
+            {
+                return Json("Bad Request");
+            }
 
-        // POST: Areas/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
+            if (id != areaDb.IdArea)
+            {
+                return Json("Bad Request");
+            }
+
+            db.Entry(areaDb).State = EntityState.Modified;
+
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                db.SaveChanges();
             }
-            catch
+            catch (Exception)
             {
-                return View();
+                if (!AreaExists(id))
+                {
+                    return Json("Area not found");
+                }
+                else
+                {
+                    throw;
+                }
             }
+
+            return Json("Success");
+        }
+        
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
 
-        // GET: Areas/Edit/5
-        public ActionResult Edit(int id)
+        private bool AreaExists(int id)
         {
-            return View();
-        }
-
-        // POST: Areas/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Areas/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Areas/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return db.Areas.Count(e => e.IdArea == id) > 0;
         }
     }
 }
