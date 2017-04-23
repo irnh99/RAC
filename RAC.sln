@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAC", "RAC\RAC.csproj", "{A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAC.DAL", "RAC.DAL\RAC.DAL.csproj", "{B3A548B6-86BB-4D9E-9978-8B09679BADF3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAC.BLL", "RAC.BLL\RAC.BLL.csproj", "{AA9DAE9E-A290-4565-934B-EB339B5FD001}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B3A548B6-86BB-4D9E-9978-8B09679BADF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3A548B6-86BB-4D9E-9978-8B09679BADF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3A548B6-86BB-4D9E-9978-8B09679BADF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA9DAE9E-A290-4565-934B-EB339B5FD001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA9DAE9E-A290-4565-934B-EB339B5FD001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA9DAE9E-A290-4565-934B-EB339B5FD001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA9DAE9E-A290-4565-934B-EB339B5FD001}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

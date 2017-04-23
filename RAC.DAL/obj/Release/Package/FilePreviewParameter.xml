@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="RAC" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\irnh3\\OneDrive\\Documents\\Git\\RAC\\RAC\.DAL\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\irnh3\\OneDrive\\Documents\\Git\\RAC\\RAC\.DAL\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="RACEntities-Web.config Connection String" description="" value="metadata=res://*/Entity.RACModel.csdl|res://*/Entity.RACModel.ssdl|res://*/Entity.RACModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=roomac.cv8rledup5ze.us-west-2.rds.amazonaws.com;Initial Catalog=RAC;Persist Security Info=True;User ID=master;Password=RAC%hell645&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\irnh3\\OneDrive\\Documents\\Git\\RAC\\RAC\.DAL\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='RACEntities']/@connectionString" />
+  </parameter>
+</parameters>
