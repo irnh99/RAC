@@ -13,5 +13,6 @@ namespace RAC.DAL.Models
         public string UserName { get; set; }
         public int? NoControl { get; set; }
         public UserTypeVM UserType { get; set; }
+        public List<HasAccessVM> HasAccess { get; set; }
     }
 }

@@ -5,10 +5,10 @@ using System.Web;
 
 namespace RAC.DAL.Models
 {
-    public class UserTypeVM
+    public class HasAccessVM
     {
+        public int IdHasAccess { get; set; }
         public int IdUserType { get; set; }
-        public string Description { get; set; }
-        public List<UserVM> Users { get; set; }
+        public int IdArea { get; set; }
     }
 }

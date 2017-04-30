@@ -20,6 +20,7 @@
     <Property Name="Descrition" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
     <Property Name="Status" Type="Boolean" />
     <NavigationProperty Name="Accesses" Relationship="Self.FK__Access__IdArea__4F7CD00D" FromRole="Area" ToRole="Access" />
+    <NavigationProperty Name="HasAccesses" Relationship="RACModel.FK__HasAccess__IdAre__5DCAEF64" FromRole="Area" ToRole="HasAccess" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -41,6 +42,7 @@
     <Property Name="IdUserType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Description" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Users" Relationship="Self.FK__Users__IdUserTyp__4CA06362" FromRole="UserType" ToRole="Users" />
+    <NavigationProperty Name="HasAccesses" Relationship="RACModel.FK__HasAccess__IdUse__5CD6CB2B" FromRole="UserType" ToRole="HasAccess" />
   </EntityType>
   <Association Name="FK__Access__IdArea__4F7CD00D">
     <End Role="Area" Type="Self.Area" Multiplicity="0..1" />
@@ -95,5 +97,48 @@
       <End Role="UserType" EntitySet="UserTypes" />
       <End Role="Users" EntitySet="Users" />
     </AssociationSet>
+    <EntitySet Name="HasAccesses" EntityType="RACModel.HasAccess" />
+    <AssociationSet Name="FK__HasAccess__IdAre__5DCAEF64" Association="RACModel.FK__HasAccess__IdAre__5DCAEF64">
+      <End Role="Area" EntitySet="Areas" />
+      <End Role="HasAccess" EntitySet="HasAccesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HasAccess__IdUse__5CD6CB2B" Association="RACModel.FK__HasAccess__IdUse__5CD6CB2B">
+      <End Role="UserType" EntitySet="UserTypes" />
+      <End Role="HasAccess" EntitySet="HasAccesses" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="HasAccess">
+    <Key>
+      <PropertyRef Name="IdHasAccess" />
+    </Key>
+    <Property Name="IdHasAccess" Type="Int32" Nullable="false" />
+    <Property Name="IdUserType" Type="Int32" />
+    <Property Name="IdArea" Type="Int32" />
+    <NavigationProperty Name="Area" Relationship="RACModel.FK__HasAccess__IdAre__5DCAEF64" FromRole="HasAccess" ToRole="Area" />
+    <NavigationProperty Name="UserType" Relationship="RACModel.FK__HasAccess__IdUse__5CD6CB2B" FromRole="HasAccess" ToRole="UserType" />
+  </EntityType>
+  <Association Name="FK__HasAccess__IdAre__5DCAEF64">
+    <End Type="RACModel.Area" Role="Area" Multiplicity="0..1" />
+    <End Type="RACModel.HasAccess" Role="HasAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="IdArea" />
+      </Principal>
+      <Dependent Role="HasAccess">
+        <PropertyRef Name="IdArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HasAccess__IdUse__5CD6CB2B">
+    <End Type="RACModel.UserType" Role="UserType" Multiplicity="0..1" />
+    <End Type="RACModel.HasAccess" Role="HasAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="IdUserType" />
+      </Principal>
+      <Dependent Role="HasAccess">
+        <PropertyRef Name="IdUserType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

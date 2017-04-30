@@ -102,6 +102,7 @@
     </Compile>
     <Compile Include="Models\AccesssVM.cs" />
     <Compile Include="Models\AreaVM.cs" />
+    <Compile Include="Models\HasAccessVM.cs" />
     <Compile Include="Models\UserTypeVM.cs" />
     <Compile Include="Models\UserVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

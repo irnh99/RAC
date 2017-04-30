@@ -41,5 +41,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="HasAccesses">
+      <EntityTypeMapping TypeName="RACModel.HasAccess">
+        <MappingFragment StoreEntitySet="HasAccess">
+          <ScalarProperty Name="IdArea" ColumnName="IdArea" />
+          <ScalarProperty Name="IdUserType" ColumnName="IdUserType" />
+          <ScalarProperty Name="IdHasAccess" ColumnName="IdHasAccess" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

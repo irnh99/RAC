@@ -12,6 +12,9 @@
         <AssociationConnector Association="RACModel.FK__Access__IdArea__4F7CD00D" ManuallyRouted="false" />
         <AssociationConnector Association="RACModel.FK__Access__IdUser__5070F446" ManuallyRouted="false" />
         <AssociationConnector Association="RACModel.FK__Users__IdUserTyp__4CA06362" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RACModel.HasAccess" Width="1.5" PointX="0.75" PointY="4.625" />
+        <AssociationConnector Association="RACModel.FK__HasAccess__IdAre__5DCAEF64" />
+        <AssociationConnector Association="RACModel.FK__HasAccess__IdUse__5CD6CB2B" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
