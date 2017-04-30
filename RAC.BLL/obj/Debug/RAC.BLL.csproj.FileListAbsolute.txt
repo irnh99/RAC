@@ -1,4 +1,3 @@
-C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\obj\Release\RAC.BLL.csprojResolveAssemblyReference.cache
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\roslyn\csc.exe
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\roslyn\csc.exe.config
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\roslyn\csc.rsp
@@ -30,6 +29,7 @@ C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\RAC.BLL.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\RAC.BLL.pdb
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\Newtonsoft.Json.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\System.Web.Helpers.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\System.Web.Mvc.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\System.Web.Razor.dll
@@ -37,13 +37,13 @@ C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\System.Web.Webpages.Deploy
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\System.Web.Webpages.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\System.Web.Webpages.Razor.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\Newtonsoft.Json.xml
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\System.Web.Razor.xml
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\System.Web.Webpages.xml
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\System.Web.Webpages.Deployment.xml
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\System.Web.Webpages.Razor.xml
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\System.Web.Helpers.xml
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\System.Web.Mvc.xml
-C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\obj\Release\RAC.BLL.dll
-C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\obj\Release\RAC.BLL.pdb
-C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\Newtonsoft.Json.dll
-C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\bin\Newtonsoft.Json.xml
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\obj\Debug\RAC.BLL.csprojResolveAssemblyReference.cache
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\obj\Debug\RAC.BLL.dll
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.BLL\obj\Debug\RAC.BLL.pdb
