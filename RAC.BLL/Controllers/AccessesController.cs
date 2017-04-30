@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
 using RAC.DAL.Models;
+using System.IO;
 
 namespace RAC.BLL.Controllers
 {
@@ -14,13 +15,13 @@ namespace RAC.BLL.Controllers
         string connection;
         public AccessesController()
         {
-            connection = "http://ec2-34-210-68-39.us-west-2.compute.amazonaws.com/Accesses/";
+            connection = "ec2-34-210-81-196.us-west-2.compute.amazonaws.com/Accesses/";
         }
 
         // GET: Accesses
         [HttpGet]
         public JsonResult Index()
-        { 
+        {
             using (WebClient wb = new WebClient())
             {
 
@@ -30,8 +31,29 @@ namespace RAC.BLL.Controllers
 
                 List<UserVM> users = JsonConvert.DeserializeObject<List<UserVM>>(response);
 
-                return Json(users,JsonRequestBehavior.AllowGet);
+                return Json(users, JsonRequestBehavior.AllowGet);
             }
+        }
+        // Create an access
+        [HttpPost]
+        public JsonResult Create(AccessVM accessVm)
+        {
+            string site = "Create";
+            WebRequest wr = WebRequest.Create(connection + site);
+            wr.Method = "POST";
+
+            string data = string.Format("accessVm={0}", JsonConvert.SerializeObject(accessVm));
+
+            using (StreamWriter sw = new StreamWriter(wr.GetRequestStream()))
+            {
+                sw.WriteLine(data);
+            }
+
+            string response = wr.GetResponse().ToString();
+
+            string webResponse = JsonConvert.DeserializeObject<string>(response);
+
+            return Json(webResponse, JsonRequestBehavior.AllowGet);
         }
     }
 }
