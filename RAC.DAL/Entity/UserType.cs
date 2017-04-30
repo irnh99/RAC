@@ -18,6 +18,7 @@ namespace RAC.DAL.Entity
         public UserType()
         {
             this.Users = new HashSet<User>();
+            this.HasAccesses = new HashSet<HasAccess>();
         }
     
         public int IdUserType { get; set; }
@@ -25,5 +26,7 @@ namespace RAC.DAL.Entity
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User> Users { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HasAccess> HasAccesses { get; set; }
     }
 }

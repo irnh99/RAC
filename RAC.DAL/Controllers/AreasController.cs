@@ -26,7 +26,10 @@ namespace RAC.DAL.Controllers
                 IdArea = x.IdArea,
                 Descrition = x.Descrition,
                 Name = x.Name,
-                Status = x.Status
+                Status = x.Status,
+                HasAccess = x.HasAccesses.Select(y => new HasAccessVM() {
+                        IdUserType = y.UserType.IdUserType
+                    }).ToList()
             }).ToList();
             return areasVm;
         }
@@ -45,7 +48,11 @@ namespace RAC.DAL.Controllers
                 IdArea = areaDb.IdArea,
                 Descrition = areaDb.Descrition,
                 Name = areaDb.Name,
-                Status = areaDb.Status
+                Status = areaDb.Status,
+                HasAccess = areaDb.HasAccesses.Select(y => new HasAccessVM()
+                {
+                    IdUserType = y.UserType.IdUserType
+                }).ToList()
             };
             return areaVm;
         }
@@ -63,7 +70,11 @@ namespace RAC.DAL.Controllers
                 IdArea = areaVm.IdArea,
                 Descrition = areaVm.Descrition,
                 Name = areaVm.Name,
-                Status = areaVm.Status
+                Status = areaVm.Status,
+                HasAccesses = areaVm.HasAccess.Select(y => new HasAccess()
+                {
+                    IdUserType = y.IdUserType
+                }).ToList()
             };
             return areaDb;
         }
@@ -72,7 +83,8 @@ namespace RAC.DAL.Controllers
         [HttpGet]
         public JsonResult Index()
         {
-            IQueryable<Area> areaDb = db.Areas;
+            IQueryable<Area> areaDb = db.Areas
+                .Include(x => x.HasAccesses);
             List<AreaVM> areaVm = ToVM(areaDb);
             return Json(areaVm, JsonRequestBehavior.AllowGet);
         }

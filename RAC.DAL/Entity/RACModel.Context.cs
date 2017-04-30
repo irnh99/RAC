@@ -29,5 +29,6 @@ namespace RAC.DAL.Entity
         public virtual DbSet<Area> Areas { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserType> UserTypes { get; set; }
+        public virtual DbSet<HasAccess> HasAccesses { get; set; }
     }
 }

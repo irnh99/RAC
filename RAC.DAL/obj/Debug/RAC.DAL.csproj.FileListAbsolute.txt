@@ -48,3 +48,4 @@ C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\System.Web.Helpers.xml
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\bin\System.Web.Mvc.xml
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\obj\Debug\RAC.DAL.dll
 C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\obj\Debug\RAC.DAL.pdb
+C:\Users\irnh3\OneDrive\Documents\Git\RAC\RAC.DAL\obj\Debug\RAC.DAL.csprojResolveAssemblyReference.cache
