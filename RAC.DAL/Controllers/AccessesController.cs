@@ -30,7 +30,7 @@ namespace RAC.DAL.Controllers
                     Name = x.Area.Name,
                     Status = x.Area.Status
                 },
-                Date = x.Date,
+                Date = x.Date.ToString(),
                 IdAccess = x.IdAccess,
                 User = new UserVM
                 {
@@ -67,7 +67,7 @@ namespace RAC.DAL.Controllers
                     Name = accessDb.Area.Name,
                     Status = accessDb.Area.Status
                 },
-                Date = accessDb.Date,
+                Date = accessDb.Date.ToString(),
                 IdAccess = accessDb.IdAccess,
                 User = new UserVM
                 {
@@ -92,32 +92,12 @@ namespace RAC.DAL.Controllers
         /// <returns></returns>
         private Access ToEntity(AccessVM accessVm)
         {
-
-            Access accessDb;
-            accessDb = new Access
+            Access accessDb = new Access
             {
-                Area = new Area
-                {
-                    Descrition = accessVm.Area.Descrition,
-                    IdArea = accessVm.Area.IdArea,
-                    Name = accessVm.Area.Name,
-                    Status = accessVm.Area.Status
-                },
-                Date = accessVm.Date,
+                IdArea = accessVm.Area.IdArea,
+                Date = DateTime.Parse(accessVm.Date),
                 IdAccess = accessVm.IdAccess,
-                User = new User
-                {
-                    IdUser = accessVm.User.IdUser,
-                    Name = accessVm.User.Name,
-                    NoControl = accessVm.User.NoControl,
-                    Pass = accessVm.User.Pass,
-                    UserName = accessVm.User.UserName,
-                    UserType = new UserType
-                    {
-                        IdUserType = accessVm.User.UserType.IdUserType,
-                        Description = accessVm.User.UserType.Description
-                    }
-                }
+                IdUser = accessVm.User.IdUser
             };
             return accessDb;
         }
@@ -127,7 +107,10 @@ namespace RAC.DAL.Controllers
         public JsonResult Index()
         {
 
-            IQueryable<Access> accessDb = db.Accesses;
+            IQueryable<Access> accessDb = db.Accesses
+                .Include(x => x.Area)
+                .Include(x => x.User)
+                .Include(x => x.User.UserType);
             List<AccessVM> accessVm = ToVM(accessDb);
             return Json(accessVm, JsonRequestBehavior.AllowGet);
         }
@@ -136,19 +119,23 @@ namespace RAC.DAL.Controllers
         [HttpPost]
         public JsonResult Create(AccessVM accessVm)
         {
-            if (!ModelState.IsValid)
-            {
-                return Json("Bad request");
+            try {
+                if (!ModelState.IsValid)
+                {
+                    return Json("Bad request");
+                }
+
+                Access accessDb = ToEntity(accessVm);
+
+                db.Accesses.Add(accessDb);
+                db.SaveChanges();
+                
+                return Json("Success", JsonRequestBehavior.AllowGet);
             }
-
-            Access accessDb = ToEntity(accessVm);
-
-            db.Accesses.Add(accessDb);
-            db.SaveChanges();
-
-            accessVm = ToVM(accessDb);
-
-            return Json("Success", JsonRequestBehavior.AllowGet);
+            catch(Exception e)
+            {
+                return Json(e, JsonRequestBehavior.AllowGet);
+            }
         }
     }
 }

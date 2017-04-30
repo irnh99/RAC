@@ -10,6 +10,6 @@ namespace RAC.DAL.Models
         public int IdAccess { get; set; }
         public UserVM User { get; set; }
         public AreaVM Area { get; set; }
-        public DateTime? Date { get; set; }
+        public string Date { get; set; }
     }
 }

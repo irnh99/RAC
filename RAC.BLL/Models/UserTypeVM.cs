@@ -5,6 +5,7 @@ using System.Web;
 
 namespace RAC.DAL.Models
 {
+    [Serializable]
     public class UserTypeVM
     {
         public int IdUserType { get; set; }

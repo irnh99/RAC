@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using Newtonsoft.Json;
 using RAC.DAL.Models;
 using System.IO;
+using System.Web.Script.Serialization;
+using System.Text;
 
 namespace RAC.BLL.Controllers
 {
@@ -15,7 +17,7 @@ namespace RAC.BLL.Controllers
         string connection;
         public AccessesController()
         {
-            connection = "ec2-34-210-81-196.us-west-2.compute.amazonaws.com/Accesses/";
+            connection = "http://ec2-34-210-81-196.us-west-2.compute.amazonaws.com/Accesses/";
         }
 
         // GET: Accesses
@@ -25,35 +27,60 @@ namespace RAC.BLL.Controllers
             using (WebClient wb = new WebClient())
             {
 
+                /* to test post method
+                 */
+                connection = "http://localhost:59781/Accesses/";
+                /**/
                 string site = "";
 
                 string response = wb.DownloadString(connection + site);
 
-                List<UserVM> users = JsonConvert.DeserializeObject<List<UserVM>>(response);
+                List<AccessVM> accesses = JsonConvert.DeserializeObject<List<AccessVM>>(response);
 
-                return Json(users, JsonRequestBehavior.AllowGet);
+                return Json(accesses, JsonRequestBehavior.AllowGet);
             }
         }
         // Create an access
-        [HttpPost]
+        [HttpGet]
         public JsonResult Create(AccessVM accessVm)
         {
-            string site = "Create";
-            WebRequest wr = WebRequest.Create(connection + site);
-            wr.Method = "POST";
+            accessVm.Date = DateTime.Now.ToString();
 
-            string data = string.Format("accessVm={0}", JsonConvert.SerializeObject(accessVm));
-
-            using (StreamWriter sw = new StreamWriter(wr.GetRequestStream()))
+            /* to test post method
+             */
+            connection = "http://localhost:59781/Accesses/";
+            accessVm.User = new UserVM()
             {
-                sw.WriteLine(data);
+                IdUser = 0
+            };
+            accessVm.Area = new AreaVM()
+            {
+                IdArea = 1
+            };
+            /* */
+            
+            JavaScriptSerializer JSS = new JavaScriptSerializer();
+
+            string site = "Create";
+            var wr = (HttpWebRequest)WebRequest.Create(connection + site);
+            wr.Method = "POST";
+            wr.ContentType = "application/json; charset=utf-8";
+
+            using (var streamWriter = new StreamWriter(wr.GetRequestStream()))
+            {
+                string json = JSS.Serialize(accessVm);
+
+                streamWriter.Write(json);
+                streamWriter.Flush();
+            }
+            var httpResponse = (HttpWebResponse)wr.GetResponse();
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                var responseText = streamReader.ReadToEnd();
+                
+                return Json(responseText, JsonRequestBehavior.AllowGet);
             }
 
-            string response = wr.GetResponse().ToString();
-
-            string webResponse = JsonConvert.DeserializeObject<string>(response);
-
-            return Json(webResponse, JsonRequestBehavior.AllowGet);
         }
     }
 }
