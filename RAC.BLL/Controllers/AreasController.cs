@@ -14,7 +14,7 @@ namespace RAC.BLL.Controllers
         string connection;
         public AreasController()
         {
-            connection = "http://ec2-34-210-81-196.us-west-2.compute.amazonaws.com/Accesses/";
+            connection = "http://ec2-34-210-81-196.us-west-2.compute.amazonaws.com/Areas/";
 
             /* to test post method
              
@@ -32,16 +32,19 @@ namespace RAC.BLL.Controllers
                 idUserType = 1;
                 /**/
 
-                string site = "";
+                string site = "?idUserType="+idUserType.ToString();
 
                 string response = wb.DownloadString(connection + site);
 
-                List<AreaVM> accesses = JsonConvert.DeserializeObject<List<AreaVM>>(response);
-                IEnumerable<AreaVM> iAccesses = accesses.AsEnumerable<AreaVM>();
+                List<AreaVM> areas = JsonConvert.DeserializeObject<List<AreaVM>>(response);
+                IEnumerable<AreaVM> iAreas = areas.AsEnumerable<AreaVM>();
 
-                accesses = iAccesses.Where(x => x.HasAccess.Where(y => y.IdUserType == idUserType).Any()).ToList();
+                areas = iAreas.Where(x => 
+                    x.HasAccess != null && 
+                    x.HasAccess.Where(y => 
+                        y.IdUserType == idUserType).Any()).ToList();
                 
-                return Json(accesses, JsonRequestBehavior.AllowGet);
+                return Json(areas, JsonRequestBehavior.AllowGet);
             }
         }
 

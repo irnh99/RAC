@@ -41,8 +41,6 @@ namespace RAC.Controllers
         [HttpPost]
         public JsonResult Create(AccessVM accessVm)
         {
-            accessVm.Date = DateTime.Now.ToString();
-
             /* to test post method
             accessVm.User = new UserVM()
             {
