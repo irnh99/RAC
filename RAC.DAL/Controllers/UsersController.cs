@@ -102,9 +102,9 @@ namespace RAC.DAL.Controllers
 
         // GET: Users/Details/5
         [HttpPost]
-        public JsonResult LogIn(string username, string password)
+        public JsonResult LogIn(UserVM userWeb)
         {
-            User user = db.Users.FirstOrDefault(x => x.UserName == username && x.Pass == password);
+            User user = db.Users.FirstOrDefault(x => x.UserName == userWeb.UserName && x.Pass == userWeb.Pass);
             if (user == null)
             {
                 return Json("Incorrect user or password");

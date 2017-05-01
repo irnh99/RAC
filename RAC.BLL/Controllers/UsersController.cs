@@ -12,81 +12,53 @@ namespace RAC.BLL.Controllers
     public class UsersController : Controller
     {
         string connection;
-        public AreasController()
+        public UsersController()
         {
-            connection = "http://ec2-34-210-81-196.us-west-2.compute.amazonaws.com/Accesses/";
+            connection = "http://ec2-34-210-81-196.us-west-2.compute.amazonaws.com/Users/";
 
             /* to test post method
-             */
-            connection = "http://localhost:59781/Areas/";
+             
+            connection = "http://localhost:59781/Users/";
             /**/
         }
 
         // GET: Areas accesible by the user
         [HttpGet]
-        public JsonResult Index(int idUserType)
+        public JsonResult Index()
         {
             using (WebClient wb = new WebClient())
             {
-                /* 
-                idUserType = 1;
-                /**/
-
                 string site = "";
 
                 string response = wb.DownloadString(connection + site);
 
                 List<AreaVM> accesses = JsonConvert.DeserializeObject<List<AreaVM>>(response);
-                IEnumerable<AreaVM> iAccesses = accesses.AsEnumerable<AreaVM>();
-
-                accesses = iAccesses.Where(x => x.HasAccess.Where(y => y.IdUserType == idUserType).Any()).ToList();
-
+                
                 return Json(accesses, JsonRequestBehavior.AllowGet);
             }
         }
 
         [HttpGet]
-        public JsonResult Details(int idArea)
+        public JsonResult LogIn(UserVM user)
         {
             /* 
-            idArea = 1;
-            /* */
-            WebClient wb = new WebClient();
-
-            string site = "Details/" + idArea.ToString();
-
-            string response = wb.DownloadString(connection + site);
-
-            AreaVM accesses = JsonConvert.DeserializeObject<AreaVM>(response);
-
-            return Json(accesses, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpPost]
-        public JsonResult OpenClose(AreaVM area)
-        {
-            /* 
-            area = new AreaVM
+            user = new UserVM
             {
-                IdArea = 1,
-                Descrition = "",
-                Name = "Laboratorio B",
-                Status = false
+                UserName = "harp99",
+                Pass = "leon"
             };
             /* */
 
-            area.Status = !area.Status;
-
             JavaScriptSerializer JSS = new JavaScriptSerializer();
 
-            string site = "Update";
+            string site = "LogIn";
             var wr = (HttpWebRequest)WebRequest.Create(connection + site);
             wr.Method = "POST";
             wr.ContentType = "application/json; charset=utf-8";
 
             using (var streamWriter = new StreamWriter(wr.GetRequestStream()))
             {
-                string json = JSS.Serialize(area);
+                string json = JSS.Serialize(user);
 
                 streamWriter.Write(json);
                 streamWriter.Flush();
@@ -94,11 +66,11 @@ namespace RAC.BLL.Controllers
             var httpResponse = (HttpWebResponse)wr.GetResponse();
             using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
-                string responseText = streamReader.ReadToEnd();
+                var responseText = streamReader.ReadToEnd();
 
-                responseText = JsonConvert.DeserializeObject<string>(responseText);
+                UserVM userDb = JsonConvert.DeserializeObject<UserVM>(responseText);
 
-                return Json(responseText, JsonRequestBehavior.AllowGet);
+                return Json(userDb, JsonRequestBehavior.AllowGet);
             }
 
         }
