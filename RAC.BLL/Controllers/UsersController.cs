@@ -38,7 +38,7 @@ namespace RAC.BLL.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpPost]
         public JsonResult LogIn(UserVM user)
         {
             /* 
