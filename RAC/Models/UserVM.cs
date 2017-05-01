@@ -5,6 +5,7 @@ using System.Web;
 
 namespace RAC.DAL.Models
 {
+    [Serializable]
     public class UserVM
     {
         public int IdUser { get; set; }
@@ -13,6 +14,5 @@ namespace RAC.DAL.Models
         public string UserName { get; set; }
         public int? NoControl { get; set; }
         public UserTypeVM UserType { get; set; }
-        public List<HasAccessVM> HasAccess { get; set; }
     }
 }

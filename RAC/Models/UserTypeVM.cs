@@ -5,10 +5,12 @@ using System.Web;
 
 namespace RAC.DAL.Models
 {
+    [Serializable]
     public class UserTypeVM
     {
         public int IdUserType { get; set; }
         public string Description { get; set; }
         public List<UserVM> Users { get; set; }
+        public List<HasAccessVM> HasAccess { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using System.Web;
 
 namespace RAC.DAL.Models
 {
+    [Serializable]
     public class AreaVM
     {
         public int IdArea { get; set; }
