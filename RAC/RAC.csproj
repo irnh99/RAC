@@ -129,8 +129,14 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Libraries\Materialize\materialize.css" />
+    <Content Include="Libraries\Materialize\materialize.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\StyleSheet1.less" />
+    <Content Include=".bin\node.cmd" />
+    <Content Include=".bin\git.cmd" />
+    <Content Include=".bin\npm.cmd" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

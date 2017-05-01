@@ -17,7 +17,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/19/2017 18:29:21</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>04/02/2017 17:46:32</publishTime>
+      <publishTime>02/04/2017 17:46:32</publishTime>
     </File>
     <File Include="bin/RAC.BLL.dll">
       <publishTime>04/30/2017 19:52:38</publishTime>
