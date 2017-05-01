@@ -1,9 +1,8 @@
 ﻿using Newtonsoft.Json;
 using RAC.DAL.Models;
-using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
@@ -18,7 +17,7 @@ namespace RAC.BLL.Controllers
             connection = "http://ec2-34-210-81-196.us-west-2.compute.amazonaws.com/Accesses/";
 
             /* to test post method
-             */
+             
             connection = "http://localhost:59781/Areas/";
             /**/
         }
@@ -63,7 +62,7 @@ namespace RAC.BLL.Controllers
             return Json(accesses, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpGet]
+        [HttpPost]
         public JsonResult OpenClose(AreaVM area)
         {
             /* 
