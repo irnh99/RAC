@@ -6,3 +6,4 @@
 /RAC.DAL/bin
 /RAC.DAL/obj/Debug
 /RAC/bin
+/RAC/node_modules/@angular/common/testing/src
