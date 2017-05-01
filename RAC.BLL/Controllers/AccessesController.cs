@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using RAC.DAL.Models;
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Net;
+using System.Web.Mvc;
 using System.Web.Script.Serialization;
-using System.Text;
 
 namespace RAC.BLL.Controllers
 {
@@ -28,7 +25,7 @@ namespace RAC.BLL.Controllers
             {
 
                 /* to test post method
-                 */
+                 
                 connection = "http://localhost:59781/Accesses/";
                 /**/
                 string site = "";
@@ -41,13 +38,13 @@ namespace RAC.BLL.Controllers
             }
         }
         // Create an access
-        [HttpGet]
+        [HttpPost]
         public JsonResult Create(AccessVM accessVm)
         {
             accessVm.Date = DateTime.Now.ToString();
 
             /* to test post method
-             */
+             
             connection = "http://localhost:59781/Accesses/";
             accessVm.User = new UserVM()
             {
@@ -77,7 +74,9 @@ namespace RAC.BLL.Controllers
             using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
                 var responseText = streamReader.ReadToEnd();
-                
+
+                responseText = JsonConvert.DeserializeObject<string>(responseText);
+
                 return Json(responseText, JsonRequestBehavior.AllowGet);
             }
 

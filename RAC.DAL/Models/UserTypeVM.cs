@@ -10,5 +10,6 @@ namespace RAC.DAL.Models
         public int IdUserType { get; set; }
         public string Description { get; set; }
         public List<UserVM> Users { get; set; }
+        public List<HasAccessVM> HasAccess { get; set; }
     }
 }

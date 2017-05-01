@@ -103,16 +103,11 @@ namespace RAC.DAL.Controllers
         }
 
         // GET: Areas/Create
-        [HttpPut]
-        public ActionResult Update(int id, AreaVM areaVm)
+        [HttpPost]
+        public ActionResult Update(AreaVM areaVm)
         {
             Area areaDb = ToEntity(areaVm);
             if (!ModelState.IsValid)
-            {
-                return Json("Bad Request");
-            }
-
-            if (id != areaDb.IdArea)
             {
                 return Json("Bad Request");
             }
@@ -125,7 +120,7 @@ namespace RAC.DAL.Controllers
             }
             catch (Exception)
             {
-                if (!AreaExists(id))
+                if (!AreaExists(areaVm.IdArea))
                 {
                     return Json("Area not found");
                 }
@@ -137,7 +132,6 @@ namespace RAC.DAL.Controllers
 
             return Json("Success");
         }
-        
         protected override void Dispose(bool disposing)
         {
             if (disposing)
