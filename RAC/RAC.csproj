@@ -118,7 +118,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\app.component.html" />
+    <AdditionalFiles Include="app\app.component.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AdditionalFiles>
     <Content Include="app\app.component.js">
       <DependentUpon>app.component.ts</DependentUpon>
     </Content>
@@ -243,6 +245,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Templates\" />
     <Folder Include="Views\Accesses\" />
     <Folder Include="Views\Areas\" />
     <Folder Include="Views\Users\" />
