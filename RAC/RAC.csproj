@@ -35,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -118,10 +119,31 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.component.html" />
-    <Content Include="app\app.component.js" />
-    <Content Include="app\app.module.js" />
+    <Content Include="app\app.component.js">
+      <DependentUpon>app.component.ts</DependentUpon>
+    </Content>
+    <Content Include="app\app.component.js.map">
+      <DependentUpon>app.component.ts</DependentUpon>
+    </Content>
+    <Content Include="app\app.models.js">
+      <DependentUpon>app.models.ts</DependentUpon>
+    </Content>
+    <Content Include="app\app.module.js">
+      <DependentUpon>app.module.ts</DependentUpon>
+    </Content>
+    <Content Include="app\app.module.js.map">
+      <DependentUpon>app.module.ts</DependentUpon>
+    </Content>
+    <Content Include="app\app.services.js">
+      <DependentUpon>app.services.ts</DependentUpon>
+    </Content>
     <Content Include="app\LogIn\login.component" />
-    <Content Include="app\LogIn\login.js" />
+    <Content Include="app\LogIn\login.js">
+      <DependentUpon>login.ts</DependentUpon>
+    </Content>
+    <Content Include="app\LogIn\login.js.map">
+      <DependentUpon>login.ts</DependentUpon>
+    </Content>
     <Content Include="app\Rooms\rooms.component" />
     <Content Include="app\Rooms\rooms.js" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -142,7 +164,12 @@
     <Content Include="Content\StyleSheet1.less" />
     <Content Include=".bin\git.cmd" />
     <Content Include=".bin\npm.cmd" />
-    <Content Include="main.js" />
+    <Content Include="main.js">
+      <DependentUpon>main.ts</DependentUpon>
+    </Content>
+    <Content Include="main.js.map">
+      <DependentUpon>main.ts</DependentUpon>
+    </Content>
     <Content Include="package.json" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -153,11 +180,13 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include=".bin\node.cmd" />
-    <Content Include="app\app.component.js.map" />
-    <Content Include="app\app.module.js.map" />
-    <Content Include="app\LogIn\login.js.map" />
     <Content Include="app\Rooms\rooms.js.map" />
-    <Content Include="main.js.map" />
+    <Content Include="app\app.services.js.map">
+      <DependentUpon>app.services.ts</DependentUpon>
+    </Content>
+    <Content Include="app\app.models.js.map">
+      <DependentUpon>app.models.ts</DependentUpon>
+    </Content>
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -224,7 +253,9 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\app.models.ts" />
     <TypeScriptCompile Include="app\LogIn\login.ts" />
+    <TypeScriptCompile Include="app\app.services.ts" />
     <TypeScriptCompile Include="main.ts" />
     <TypeScriptCompile Include="app\Rooms\rooms.ts" />
   </ItemGroup>
