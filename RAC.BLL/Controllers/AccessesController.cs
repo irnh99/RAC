@@ -15,6 +15,11 @@ namespace RAC.BLL.Controllers
         public AccessesController()
         {
             connection = "http://ec2-34-210-81-196.us-west-2.compute.amazonaws.com/Accesses/";
+
+            /* to test post method*/
+
+            connection = "http://localhost:59781/Accesses/";
+            /**/
         }
 
         // GET: Accesses
@@ -24,10 +29,6 @@ namespace RAC.BLL.Controllers
             using (WebClient wb = new WebClient())
             {
 
-                /* to test post method
-                 
-                connection = "http://localhost:59781/Accesses/";
-                /**/
                 string site = "";
 
                 string response = wb.DownloadString(connection + site);
@@ -44,8 +45,6 @@ namespace RAC.BLL.Controllers
             accessVm.Date = DateTime.Now.ToString();
 
             /* to test post method
-             
-            connection = "http://localhost:59781/Accesses/";
             accessVm.User = new UserVM()
             {
                 IdUser = 0

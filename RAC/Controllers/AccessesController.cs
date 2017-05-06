@@ -16,7 +16,7 @@ namespace RAC.Controllers
         {
             connection = "http://ec2-54-213-8-236.us-west-2.compute.amazonaws.com/Accesses/";
 
-            /* to test post method
+            /* to test post method*/
             connection = "http://localhost:50509/Accesses/";
             /**/
         }
