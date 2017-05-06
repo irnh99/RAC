@@ -8,7 +8,7 @@ import { Models } from './app.models'
 
 @Injectable()
 export class UsersServices {
-    private url = '/Users/Login';
+    private url = 'http://localhost:51508/Users/Login';
 
     constructor(private http: Http) { }
 
@@ -17,7 +17,7 @@ export class UsersServices {
         let options = new RequestOptions({ headers: headers });
 
         return this.http.post(this.url, { user: user }, options)
-            .map(this.extractData)
+            .map((res: Response) => res.json())
             .catch(this.handleError);
     }
 

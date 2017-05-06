@@ -37,7 +37,7 @@ namespace RAC.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpPost]
         public JsonResult LogIn(UserVM user)
         {
             /* 

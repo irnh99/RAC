@@ -16,13 +16,13 @@ require("rxjs/add/operator/map");
 var UsersServices = (function () {
     function UsersServices(http) {
         this.http = http;
-        this.url = '/Users/Login';
+        this.url = 'http://localhost:51508/Users/Login';
     }
     UsersServices.prototype.LogIn = function (user) {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
         return this.http.post(this.url, { user: user }, options)
-            .map(this.extractData)
+            .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };
     UsersServices.prototype.extractData = function (res) {

@@ -1,8 +1,7 @@
-﻿import { Component, OnInit } from '@angular/core';
-//import { UsersServices } from './app.services';
+﻿import { Component, OnInit, OnDestroy } from '@angular/core';
+import { UsersServices } from './app.services';
 import { Models } from './app.models';
-//import { Http, Headers, HttpModule } from '@angular/http';
-
+import { Http, Headers, HttpModule } from '@angular/http';
 
 //import { Router } from '@angular/router';
 
@@ -27,15 +26,17 @@ import { Models } from './app.models';
 export class AppComponent implements OnInit {
 
     user: Models.User = new Models.User;
-    //constructor(private userServices: UsersServices) { }
+    constructor(private userServices: UsersServices) { }
 
     ngOnInit() {
         this.user.UserName = "harp99";
         this.user.pass = "leon";
 
 
-        //this.userServices.LogIn(this.user)
-        //    .map(x => this.user = x);
+        this.userServices.LogIn(this.user)
+            .subscribe(x => {
+                this.user = x;
+            });
 
     }
     GeneralError(data: any) {
