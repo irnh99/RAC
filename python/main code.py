@@ -25,5 +25,7 @@ while(True):
 
             if (a.Status):
                 print("abrete")
+            else:
+                print("cierrate")
     time.sleep(10)
     
