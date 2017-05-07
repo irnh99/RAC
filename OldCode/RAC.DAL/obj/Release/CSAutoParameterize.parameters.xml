@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="RACEntities-Web.config Connection String" description="RACEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Entity.RACModel.csdl|res://*/Entity.RACModel.ssdl|res://*/Entity.RACModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=roomac.cv8rledup5ze.us-west-2.rds.amazonaws.com;initial catalog=RAC;persist security info=True;user id=master;password=RAC%hell645;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\irnh3\\OneDrive\\Documents\\Git\\RAC\\RAC\.DAL\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='RACEntities']/@connectionString" />
-  </parameter>
-</parameters>
