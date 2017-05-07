@@ -118,9 +118,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <AdditionalFiles Include="app\app.component.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AdditionalFiles>
+    <AdditionalFiles Include="app\app.component.html" />
     <Content Include="app\app.component.js">
       <DependentUpon>app.component.ts</DependentUpon>
     </Content>

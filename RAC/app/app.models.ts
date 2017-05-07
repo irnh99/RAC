@@ -18,14 +18,14 @@ export namespace Models {
     export class User {
         IdUser: number;
         Name: string;
-        pass: string;
+        Pass: string;
         UserName: string;
         NoControl: number;
         UserType: UserType;
     }
 
     export class UserType {
-        IdUSerType: number;
+        IdUserType: number;
         Description: string;
         Users: Array<User>;
         HasAccess: Array<HasAccess>;
@@ -33,7 +33,7 @@ export namespace Models {
 
     export class Access {
         IdAccess: number;
-        user: User;
+        User: User;
         Area: Area;
         Date: string;
     }

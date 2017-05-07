@@ -13,23 +13,57 @@ var http_1 = require("@angular/http");
 var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/operator/catch");
 require("rxjs/add/operator/map");
-var UsersServices = (function () {
-    function UsersServices(http) {
+var Services = (function () {
+    function Services(http) {
         this.http = http;
-        this.url = 'http://localhost:51508/Users/Login';
+        this.generalUrl = 'http://localhost:51508/';
+        this.loginUrl = 'Users/Login';
+        this.getRoomsUrl = 'Areas/';
+        this.openCloseUrl = 'Areas/OpenClose';
+        this.getAccessesUrl = 'Accesses/';
     }
-    UsersServices.prototype.LogIn = function (user) {
+    ///User
+    //LogIn
+    Services.prototype.LogIn = function (user) {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.post(this.url, { user: user }, options)
+        return this.http.post(this.generalUrl + this.loginUrl, { user: user }, options)
             .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };
-    UsersServices.prototype.extractData = function (res) {
+    ///Rooms
+    //GetRooms
+    Services.prototype.GetAreas = function (UserTypeId) {
+        var params = new http_1.URLSearchParams();
+        params.set('idUserType', UserTypeId.toString());
+        var requestOptions = new http_1.RequestOptions();
+        requestOptions.search = params;
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        return this.http.get(this.generalUrl + this.getRoomsUrl, requestOptions)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
+    //open close area
+    Services.prototype.OpenClose = function (area) {
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http.post(this.generalUrl + this.openCloseUrl, { area: area }, options)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
+    ///Accesses
+    //get accesses
+    Services.prototype.GetAccesses = function () {
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        return this.http.get(this.generalUrl + this.getAccessesUrl)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
+    Services.prototype.extractData = function (res) {
         var body = res.json();
         return body.data || {};
     };
-    UsersServices.prototype.handleError = function (error) {
+    Services.prototype.handleError = function (error) {
         // In a real world app, you might use a remote logging infrastructure
         var errMsg;
         if (error instanceof http_1.Response) {
@@ -43,11 +77,11 @@ var UsersServices = (function () {
         console.error(errMsg);
         return Observable_1.Observable.throw(errMsg);
     };
-    return UsersServices;
+    return Services;
 }());
-UsersServices = __decorate([
+Services = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])
-], UsersServices);
-exports.UsersServices = UsersServices;
+], Services);
+exports.Services = Services;
 //# sourceMappingURL=app.services.js.map

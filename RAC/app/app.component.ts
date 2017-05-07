@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit, OnDestroy } from '@angular/core';
-import { UsersServices } from './app.services';
+import { Services } from './app.services';
 import { Models } from './app.models';
 import { Http, Headers, HttpModule } from '@angular/http';
 
@@ -23,22 +23,89 @@ import { Http, Headers, HttpModule } from '@angular/http';
     //providers: [UsersServices]
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
 
+    page: string = "LogIn";
+    isAdmin: boolean = false;
+
+
+    //user vars
     user: Models.User = new Models.User;
-    constructor(private userServices: UsersServices) { }
+    newUser: Models.User = new Models.User;
 
-    ngOnInit() {
-        this.user.UserName = "harp99";
-        this.user.pass = "leon";
+    //used list;
+    areas: Models.Area[] = new Array<Models.Area>();
+    accesses: Models.Access[] = new Array<Models.Access>();
+
+    constructor(private services: Services) { }
+
+    //ngOnInit() {
+    //    this.user.UserName = "harp99";
+    //    this.user.pass = "leon";
 
 
-        this.userServices.LogIn(this.user)
-            .subscribe(x => {
-                this.user = x;
-            });
+    //this.userServices.LogIn(this.user)
+    //    .subscribe(x => {
+    //        this.user = x;
+    //    });
+    //}
 
+    LogIn(): void {
+
+        if (this.user.Pass
+            && this.user.Pass != ""
+            && this.user.UserName
+            && this.user.UserName != "") {
+
+            this.services.LogIn(this.user)
+                .subscribe(x => {
+                    this.user = x;
+
+                    this.isAdmin = (x.UserType.IdUserType == 0);
+
+                    this.getAreas();
+                });
+        }
     }
+
+    getAreas(): void {
+
+        this.services.GetAreas(this.user.UserType.IdUserType)
+            .subscribe(y => {
+                this.areas = y;
+
+                this.page = "Rooms";
+            });
+    }
+
+    getAccesses(): void {
+
+        this.services.GetAccesses()
+            .subscribe(x => {
+                this.accesses = x;
+
+                this.page = "Accesses";
+            });
+    }
+
+
+    LogOut(): void{
+        this.page = "LogIn";
+        this.isAdmin = false;
+    }
+
+    OpenClose(area: Models.Area): void {
+
+        this.services.OpenClose(area)
+            .subscribe(x => {
+                this.getAreas();
+            });
+    }
+
+    ChangePage(page: string): void {
+        this.page = page;
+    }
+
     GeneralError(data: any) {
         console.error = data;
     }

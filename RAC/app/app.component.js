@@ -21,18 +21,68 @@ var app_models_1 = require("./app.models");
 //import 'rxjs/add/operator/debounceTime';
 //import 'rxjs/add/operator/distinctUntilChanged';
 var AppComponent = (function () {
-    function AppComponent(userServices) {
-        this.userServices = userServices;
+    function AppComponent(services) {
+        this.services = services;
+        this.page = "LogIn";
+        this.isAdmin = false;
+        //user vars
         this.user = new app_models_1.Models.User;
+        this.newUser = new app_models_1.Models.User;
+        //used list;
+        this.areas = new Array();
+        this.accesses = new Array();
     }
-    AppComponent.prototype.ngOnInit = function () {
+    //ngOnInit() {
+    //    this.user.UserName = "harp99";
+    //    this.user.pass = "leon";
+    //this.userServices.LogIn(this.user)
+    //    .subscribe(x => {
+    //        this.user = x;
+    //    });
+    //}
+    AppComponent.prototype.LogIn = function () {
         var _this = this;
-        this.user.UserName = "harp99";
-        this.user.pass = "leon";
-        this.userServices.LogIn(this.user)
-            .subscribe(function (x) {
-            _this.user = x;
+        if (this.user.Pass
+            && this.user.Pass != ""
+            && this.user.UserName
+            && this.user.UserName != "") {
+            this.services.LogIn(this.user)
+                .subscribe(function (x) {
+                _this.user = x;
+                _this.isAdmin = (x.UserType.IdUserType == 0);
+                _this.getAreas();
+            });
+        }
+    };
+    AppComponent.prototype.getAreas = function () {
+        var _this = this;
+        this.services.GetAreas(this.user.UserType.IdUserType)
+            .subscribe(function (y) {
+            _this.areas = y;
+            _this.page = "Rooms";
         });
+    };
+    AppComponent.prototype.getAccesses = function () {
+        var _this = this;
+        this.services.GetAccesses()
+            .subscribe(function (x) {
+            _this.accesses = x;
+            _this.page = "Accesses";
+        });
+    };
+    AppComponent.prototype.LogOut = function () {
+        this.page = "LogIn";
+        this.isAdmin = false;
+    };
+    AppComponent.prototype.OpenClose = function (area) {
+        var _this = this;
+        this.services.OpenClose(area)
+            .subscribe(function (x) {
+            _this.getAreas();
+        });
+    };
+    AppComponent.prototype.ChangePage = function (page) {
+        this.page = page;
     };
     AppComponent.prototype.GeneralError = function (data) {
         console.error = data;
@@ -44,7 +94,7 @@ AppComponent = __decorate([
         selector: 'RAC-app',
         templateUrl: "/app/app.component.html",
     }),
-    __metadata("design:paramtypes", [app_services_1.UsersServices])
+    __metadata("design:paramtypes", [app_services_1.Services])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

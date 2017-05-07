@@ -74,7 +74,7 @@ namespace RAC.Controllers
 
             JavaScriptSerializer JSS = new JavaScriptSerializer();
 
-            string site = "Update";
+            string site = "OpenClose";
             var wr = (HttpWebRequest)WebRequest.Create(connection + site);
             wr.Method = "POST";
             wr.ContentType = "application/json; charset=utf-8";

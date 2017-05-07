@@ -1,5 +1,5 @@
 ﻿import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions, HttpModule } from '@angular/http';
+import { Http, Response, Headers, RequestOptions, HttpModule, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -7,16 +7,56 @@ import 'rxjs/add/operator/map';
 import { Models } from './app.models'
 
 @Injectable()
-export class UsersServices {
-    private url = 'http://localhost:51508/Users/Login';
+export class Services {
+    private generalUrl = 'http://localhost:51508/';
+    private loginUrl = 'Users/Login'
+    private getRoomsUrl = 'Areas/'
+    private openCloseUrl = 'Areas/OpenClose'
+    private getAccessesUrl = 'Accesses/'
+
 
     constructor(private http: Http) { }
 
+    ///User
+    //LogIn
     LogIn(user: Models.User): Observable<Models.User> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
-        return this.http.post(this.url, { user: user }, options)
+        return this.http.post(this.generalUrl + this.loginUrl, { user: user }, options)
+            .map((res: Response) => res.json())
+            .catch(this.handleError);
+    }
+    ///Rooms
+    //GetRooms
+    GetAreas(UserTypeId: number): Observable<Models.Area[]> {
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('idUserType', UserTypeId.toString());
+
+        let requestOptions = new RequestOptions();
+        requestOptions.search = params;
+
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+
+        return this.http.get(this.generalUrl + this.getRoomsUrl, requestOptions)
+            .map((res: Response) => res.json())
+            .catch(this.handleError);
+    }
+    //open close area
+    OpenClose(area: Models.Area): Observable<string> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.post(this.generalUrl + this.openCloseUrl, { area: area }, options)
+            .map((res: Response) => res.json())
+            .catch(this.handleError);
+    }
+    ///Accesses
+    //get accesses
+    GetAccesses(): Observable<Models.Access[]> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+
+        return this.http.get(this.generalUrl + this.getAccessesUrl)
             .map((res: Response) => res.json())
             .catch(this.handleError);
     }

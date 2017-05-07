@@ -24,7 +24,7 @@ AppModule = __decorate([
             http_1.JsonpModule],
         declarations: [app_component_1.AppComponent],
         bootstrap: [app_component_1.AppComponent],
-        providers: [app_services_1.UsersServices]
+        providers: [app_services_1.Services]
     })
 ], AppModule);
 exports.AppModule = AppModule;

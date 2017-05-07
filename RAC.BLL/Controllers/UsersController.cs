@@ -31,7 +31,7 @@ namespace RAC.BLL.Controllers
 
                 string response = wb.DownloadString(connection + site);
 
-                List<AreaVM> accesses = JsonConvert.DeserializeObject<List<AreaVM>>(response);
+                List<UserVM> accesses = JsonConvert.DeserializeObject<List<UserVM>>(response);
                 
                 return Json(accesses, JsonRequestBehavior.AllowGet);
             }
