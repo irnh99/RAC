@@ -8,9 +8,9 @@ import { Models } from './app.models'
 
 @Injectable()
 export class Services {
-    /* production
+    /* production*/
     private generalUrl = 'http://ec2-54-244-184-79.us-west-2.compute.amazonaws.com/';
-    /*local test*/
+    /*local test
     private generalUrl = 'http://localhost:51508/';
     /**/
     private loginUrl = 'Users/Login'
