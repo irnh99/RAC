@@ -27,9 +27,10 @@ namespace RAC.DAL.Controllers
                 Descrition = x.Descrition,
                 Name = x.Name,
                 Status = x.Status,
-                HasAccess = x.HasAccesses.Select(y => new HasAccessVM() {
-                        IdUserType = y.UserType.IdUserType
-                    }).ToList()
+                HasAccess = x.HasAccesses.Select(y => new HasAccessVM()
+                {
+                    IdUserType = y.UserType.IdUserType
+                }).ToList()
             }).ToList();
             return areasVm;
         }
@@ -112,7 +113,9 @@ namespace RAC.DAL.Controllers
                 return Json("Bad Request");
             }
 
-            db.Entry(areaDb).State = EntityState.Modified;
+            areaDb.HasAccesses = null;
+            db.Areas.Attach(areaDb);
+            db.Entry(areaDb).Property(x => x.Status).IsModified = true;
 
             try
             {

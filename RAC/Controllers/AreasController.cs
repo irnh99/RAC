@@ -16,7 +16,7 @@ namespace RAC.Controllers
         {
             connection = "http://ec2-54-213-8-236.us-west-2.compute.amazonaws.com/Areas/";
 
-            /* to test post method
+            /* to test post method */
              
             connection = "http://localhost:50509/Areas/";
             /**/
@@ -74,7 +74,7 @@ namespace RAC.Controllers
 
             JavaScriptSerializer JSS = new JavaScriptSerializer();
 
-            string site = "Update";
+            string site = "OpenClose";
             var wr = (HttpWebRequest)WebRequest.Create(connection + site);
             wr.Method = "POST";
             wr.ContentType = "application/json; charset=utf-8";

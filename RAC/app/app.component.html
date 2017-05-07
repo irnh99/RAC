@@ -1,0 +1,75 @@
+﻿<div *ngIf="page!='LogIn'">
+    <nav>
+        <div class="nav-wrapper black">
+            <span class="left blue darken-2 welcome-sign hide-on-med-and-down">Welcome {{user.Name}}</span>
+            <ul class="center">
+                <li class="grey darken-2"><a (click)="getAreas()">Areas</a></li>
+                <!--<li *ngIf="isAdmin"><a (click)="ChangePage('newUser')">Crear usuario</a></li>-->
+                <li class="grey darken-2" *ngIf="isAdmin"><a (click)="getAccesses()">Ver accesos</a></li>
+            </ul>
+            <ul class="right">
+                <li class="grey darken-2">
+                    <a (click)="LogOut()">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div *ngIf="page=='LogIn'">
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="userName" type="text" class="validate" [(ngModel)]="user.UserName" name="UserName" />
+                <label for="userName">User Name:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="password" type="password" class="validate" [(ngModel)]="user.Pass" name="Pass" />
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <input class="waves-effect waves-light btn" type="submit" name="Log In" (click)="LogIn()" />
+    </form>
+</div>
+
+<div *ngIf="page=='Rooms'">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Status</th>
+        </tr>
+        <tr *ngFor="let area of areas">
+            <td>{{area.Name}}</td>
+            <td>{{area.Description}}</td>
+            <td *ngIf="area.Status">
+                <a class="btn-floating btn-large waves-effect waves-light green" (click)="OpenClose(area)">Open</a>
+            </td>
+            <td *ngIf="!area.Status">
+                <a class="btn-floating btn-large waves-effect waves-light red" (click)="OpenClose(area)">Close</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<div *ngIf="page=='Accesses'">
+    <table>
+        <tr>
+            <th>Room</th>
+            <th>User</th>
+            <th>Control Number</th>
+            <th>User's Name</th>
+            <th>Date Time</th>
+        </tr>
+        <tr *ngFor="let access of accesses">
+            <td>{{access.Area.Name}}</td>
+            <td>{{access.User.Name}}</td>
+            <td>{{access.User.NoControl}}</td>
+            <td>{{access.User.UserName}}</td>
+            <td>{{access.Date}}</td>
+        </tr>
+    </table>
+</div>

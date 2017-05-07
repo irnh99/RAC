@@ -15,7 +15,7 @@ namespace RAC.BLL.Controllers
         {
             connection = "http://ec2-34-210-81-196.us-west-2.compute.amazonaws.com/Users/";
 
-            /* to test post method
+            /* to test post method*/
              
             connection = "http://localhost:59781/Users/";
             /**/
@@ -31,7 +31,7 @@ namespace RAC.BLL.Controllers
 
                 string response = wb.DownloadString(connection + site);
 
-                List<AreaVM> accesses = JsonConvert.DeserializeObject<List<AreaVM>>(response);
+                List<UserVM> accesses = JsonConvert.DeserializeObject<List<UserVM>>(response);
                 
                 return Json(accesses, JsonRequestBehavior.AllowGet);
             }

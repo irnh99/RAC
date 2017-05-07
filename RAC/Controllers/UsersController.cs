@@ -15,7 +15,7 @@ namespace RAC.Controllers
         {
             connection = "http://ec2-54-213-8-236.us-west-2.compute.amazonaws.com/Users/";
 
-            /* to test post method 
+            /* to test post method */
              
             connection = "http://localhost:50509/Users/";
             /**/
@@ -31,13 +31,13 @@ namespace RAC.Controllers
 
                 string response = wb.DownloadString(connection + site);
 
-                List<AreaVM> accesses = JsonConvert.DeserializeObject<List<AreaVM>>(response);
+                List<UserVM> accesses = JsonConvert.DeserializeObject<List<UserVM>>(response);
 
                 return Json(accesses, JsonRequestBehavior.AllowGet);
             }
         }
 
-        [HttpGet]
+        [HttpPost]
         public JsonResult LogIn(UserVM user)
         {
             /* 
