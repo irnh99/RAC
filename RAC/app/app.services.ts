@@ -8,11 +8,16 @@ import { Models } from './app.models'
 
 @Injectable()
 export class Services {
+    /* production
+    private generalUrl = 'http://ec2-54-244-184-79.us-west-2.compute.amazonaws.com/';
+    /*local test*/
     private generalUrl = 'http://localhost:51508/';
+    /**/
     private loginUrl = 'Users/Login'
     private getRoomsUrl = 'Areas/'
     private openCloseUrl = 'Areas/OpenClose'
     private getAccessesUrl = 'Accesses/'
+    private CreateAccessUrl = 'Accesses/Create'
 
 
     constructor(private http: Http) { }
@@ -57,6 +62,15 @@ export class Services {
         let headers = new Headers({ 'Content-Type': 'application/json' });
 
         return this.http.get(this.generalUrl + this.getAccessesUrl)
+            .map((res: Response) => res.json())
+            .catch(this.handleError);
+    }
+    //create access register
+    CreateAccess(access: Models.Access): Observable<string> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.post(this.generalUrl + this.CreateAccessUrl, { accessVm: access }, options)
             .map((res: Response) => res.json())
             .catch(this.handleError);
     }

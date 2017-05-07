@@ -1,13 +1,17 @@
 ﻿<div *ngIf="page!='LogIn'">
     <nav>
         <div class="nav-wrapper black">
-            <span class="left hide-on-med-and-down">Welcome {{user.Name}}</span>
+            <span class="left blue darken-2 welcome-sign hide-on-med-and-down">Welcome {{user.Name}}</span>
             <ul class="center">
-                <li><a (click)="getAreas()">Areas</a></li>
-                <li *ngIf="isAdmin"><a (click)="ChangePage('newUser')">Crear usuario</a></li>
-                <li *ngIf="isAdmin"><a (click)="getAccesses()">Ver accesos</a></li>
+                <li class="grey darken-2"><a (click)="getAreas()">Areas</a></li>
+                <!--<li *ngIf="isAdmin"><a (click)="ChangePage('newUser')">Crear usuario</a></li>-->
+                <li class="grey darken-2" *ngIf="isAdmin"><a (click)="getAccesses()">Ver accesos</a></li>
             </ul>
-            <a class="right" (click)="LogOut()">Log Out</a>
+            <ul class="right">
+                <li class="grey darken-2">
+                    <a (click)="LogOut()">Log Out</a>
+                </li>
+            </ul>
         </div>
     </nav>
 </div>

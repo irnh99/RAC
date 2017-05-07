@@ -16,11 +16,16 @@ require("rxjs/add/operator/map");
 var Services = (function () {
     function Services(http) {
         this.http = http;
+        /* production
+        private generalUrl = 'http://ec2-54-244-184-79.us-west-2.compute.amazonaws.com/';
+        /*local test*/
         this.generalUrl = 'http://localhost:51508/';
+        /**/
         this.loginUrl = 'Users/Login';
         this.getRoomsUrl = 'Areas/';
         this.openCloseUrl = 'Areas/OpenClose';
         this.getAccessesUrl = 'Accesses/';
+        this.CreateAccessUrl = 'Accesses/Create';
     }
     ///User
     //LogIn
@@ -56,6 +61,14 @@ var Services = (function () {
     Services.prototype.GetAccesses = function () {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         return this.http.get(this.generalUrl + this.getAccessesUrl)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
+    //create access register
+    Services.prototype.CreateAccess = function (access) {
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http.post(this.generalUrl + this.CreateAccessUrl, { accessVm: access }, options)
             .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };

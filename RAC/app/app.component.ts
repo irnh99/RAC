@@ -90,6 +90,7 @@ export class AppComponent {
 
 
     LogOut(): void{
+        this.user = new Models.User();
         this.page = "LogIn";
         this.isAdmin = false;
     }
@@ -98,8 +99,21 @@ export class AppComponent {
 
         this.services.OpenClose(area)
             .subscribe(x => {
+                if (!area.Status) {
+                    this.CreateAccess(area);
+                }
                 this.getAreas();
             });
+    }
+
+    CreateAccess(area: Models.Area): void {
+        let access: Models.Access = new Models.Access();
+
+        access.Area = area;
+        access.User = this.user;
+
+        this.services.CreateAccess(access)
+            .subscribe(x => { });
     }
 
     ChangePage(page: string): void {

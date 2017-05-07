@@ -71,6 +71,7 @@ var AppComponent = (function () {
         });
     };
     AppComponent.prototype.LogOut = function () {
+        this.user = new app_models_1.Models.User();
         this.page = "LogIn";
         this.isAdmin = false;
     };
@@ -78,8 +79,18 @@ var AppComponent = (function () {
         var _this = this;
         this.services.OpenClose(area)
             .subscribe(function (x) {
+            if (!area.Status) {
+                _this.CreateAccess(area);
+            }
             _this.getAreas();
         });
+    };
+    AppComponent.prototype.CreateAccess = function (area) {
+        var access = new app_models_1.Models.Access();
+        access.Area = area;
+        access.User = this.user;
+        this.services.CreateAccess(access)
+            .subscribe(function (x) { });
     };
     AppComponent.prototype.ChangePage = function (page) {
         this.page = page;
