@@ -15,8 +15,8 @@ namespace RAC.Controllers
         {
             connection = "http://ec2-54-186-139-128.us-west-2.compute.amazonaws.com/Users/";
 
-            /* to test post method 
-             
+            /* to test post method */
+
             connection = "http://localhost:50509/Users/";
             /**/
         }
@@ -31,9 +31,9 @@ namespace RAC.Controllers
 
                 string response = wb.DownloadString(connection + site);
 
-                List<UserVM> accesses = JsonConvert.DeserializeObject<List<UserVM>>(response);
+                List<UserVM> users = JsonConvert.DeserializeObject<List<UserVM>>(response);
 
-                return Json(accesses, JsonRequestBehavior.AllowGet);
+                return Json(users, JsonRequestBehavior.AllowGet);
             }
         }
 
@@ -72,6 +72,24 @@ namespace RAC.Controllers
                 return Json(userDb, JsonRequestBehavior.AllowGet);
             }
 
+        }
+
+
+        [HttpPost]
+        public JsonResult GetuserByNoControl(int NoControl)
+        {
+            using (WebClient wb = new WebClient())
+            {
+                string site = "";
+
+                string response = wb.DownloadString(connection + site);
+
+                List<UserVM> users = JsonConvert.DeserializeObject<List<UserVM>>(response);
+
+                UserVM user = users.Find(x => x.NoControl == NoControl);
+
+                return Json(user, JsonRequestBehavior.AllowGet);
+            }
         }
     }
 }
