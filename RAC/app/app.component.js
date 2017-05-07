@@ -102,7 +102,7 @@ var AppComponent = (function () {
 }());
 AppComponent = __decorate([
     core_1.Component({
-        selector: 'RAC-app',
+        selector: 'my-app',
         templateUrl: "/app/app.component.html",
     }),
     __metadata("design:paramtypes", [app_services_1.Services])

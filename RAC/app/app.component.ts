@@ -18,7 +18,7 @@ import { Http, Headers, HttpModule } from '@angular/http';
 
 
 @Component({
-    selector: 'RAC-app',
+    selector: 'my-app',
     templateUrl: `/app/app.component.html`,
     //providers: [UsersServices]
 })

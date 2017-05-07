@@ -14,7 +14,7 @@ namespace RAC.BLL.Controllers
         string connection;
         public AreasController()
         {
-            connection = "http://ec2-34-210-81-196.us-west-2.compute.amazonaws.com/Areas/";
+            connection = "http://ec2-54-149-244-162.us-west-2.compute.amazonaws.com/Areas/";
 
             /* to test post method
              
