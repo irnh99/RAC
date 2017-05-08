@@ -16,7 +16,7 @@ namespace RAC.BLL.Controllers
         {
             connection = "http://ec2-54-149-244-162.us-west-2.compute.amazonaws.com/Accesses/";
 
-            /* to test post method*/
+            /* to test post method
 
             connection = "http://localhost:59781/Accesses/";
             /**/
