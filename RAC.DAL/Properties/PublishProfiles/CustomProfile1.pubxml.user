@@ -7,131 +7,131 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA34JTxjd+s0imqeg8OQ6lLwAAAAACAAAAAAAQZgAAAAEAACAAAADtC66zKJeJqakQ6hdeFJKH/n73Br3z6hGu0dk7OzLeVgAAAAAOgAAAAAIAACAAAADBqYG1dcdrgfu+T7k1gQozV90RUT0R2kwtkdEccDKaelAAAADq3nqnnvermNT4DiTAXSga/CAZyp8U0r7xZ5bTGTNN024a2W7RyKEf0EMArQqzbl8fpe/A+UvpBz1U4eE17fzuNLxzPuq1eAsmKCQhFxaZKkAAAAC/oCe/oGg5UwS8DTRb3vCrkfzTVeCDLqVAilHULJ+8vIJFheCGLj0zKi6acAo6XK3MeeBGbsSVQNIkFbgaXZfI</EncryptedPassword>
-    <_PublishTargetUrl>ftp://ec2-34-210-81-196.us-west-2.compute.amazonaws.com</_PublishTargetUrl>
+    <_PublishTargetUrl>ftp://ec2-54-244-60-234.us-west-2.compute.amazonaws.com</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>03/01/2017 23:44:16</publishTime>
+      <publishTime>01/03/2017 23:44:16</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>03/01/2017 23:44:16</publishTime>
+      <publishTime>01/03/2017 23:44:16</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>12/13/2016 02:10:32</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/19/2017 18:29:21</publishTime>
     </File>
     <File Include="bin/RAC.DAL.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/06/2017 23:11:54</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/csc.rsp">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/csi.exe">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/csi.rsp">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/System.AppContext.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/System.Collections.Immutable.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/System.IO.FileSystem.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/System.Reflection.Metadata.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.exe">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.exe.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.rsp">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/19/2017 18:29:20</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/19/2017 18:29:20</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/19/2017 18:29:20</publishTime>
     </File>
     <File Include="bin/System.Web.Webpages.Deployment.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/19/2017 18:29:20</publishTime>
     </File>
     <File Include="bin/System.Web.Webpages.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/19/2017 18:29:20</publishTime>
     </File>
     <File Include="bin/System.Web.Webpages.Razor.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/19/2017 18:29:20</publishTime>
     </File>
     <File Include="Entity/RACModel.edmx.diagram">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/30/2017 13:51:46</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/23/2017 11:15:33</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/24/2017 21:12:00</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/24/2017 22:25:08</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -14,7 +14,7 @@ namespace RAC.Controllers
         string connection;
         public AccessesController()
         {
-            connection = "http://ec2-54-186-139-128.us-west-2.compute.amazonaws.com/Accesses/";
+            connection = "http://ec2-54-202-220-222.us-west-2.compute.amazonaws.com/Accesses/";
 
             /* to test post method
             connection = "http://localhost:50509/Accesses/";

@@ -13,7 +13,7 @@ namespace RAC.BLL.Controllers
         string connection;
         public UsersController()
         {
-            connection = "http://ec2-54-149-244-162.us-west-2.compute.amazonaws.com/Users/";
+            connection = "http://ec2-54-244-60-234.us-west-2.compute.amazonaws.com/Users/";
 
             /* to test post method
              
