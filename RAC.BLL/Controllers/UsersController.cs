@@ -13,9 +13,9 @@ namespace RAC.BLL.Controllers
         string connection;
         public UsersController()
         {
-            connection = "http://ec2-54-244-60-234.us-west-2.compute.amazonaws.com/Users/";
+            connection = "http://ec2-54-202-130-87.us-west-2.compute.amazonaws.com/Users/";
 
-            /* to test post method
+            /* to test post method */
              
             connection = "http://localhost:59781/Users/";
             /**/
@@ -31,9 +31,9 @@ namespace RAC.BLL.Controllers
 
                 string response = wb.DownloadString(connection + site);
 
-                List<UserVM> accesses = JsonConvert.DeserializeObject<List<UserVM>>(response);
+                List<UserVM> users = JsonConvert.DeserializeObject<List<UserVM>>(response);
                 
-                return Json(accesses, JsonRequestBehavior.AllowGet);
+                return Json(users, JsonRequestBehavior.AllowGet);
             }
         }
 
@@ -72,6 +72,25 @@ namespace RAC.BLL.Controllers
                 return Json(userDb, JsonRequestBehavior.AllowGet);
             }
 
+        }
+
+
+        [HttpGet]
+        public JsonResult GetUserByNoControl(int noControl)
+        {
+            List<UserVM> users;
+            using (WebClient wb = new WebClient())
+            {
+                string site = "";
+
+                string response = wb.DownloadString(connection + site);
+
+                users = JsonConvert.DeserializeObject<List<UserVM>>(response);
+            }
+
+            UserVM user = users.Find(x => x.NoControl == noControl);
+
+            return Json(user, JsonRequestBehavior.AllowGet);
         }
     }
 }
