@@ -17,7 +17,7 @@ var Services = (function () {
     function Services(http) {
         this.http = http;
         /* production*/
-        this.generalUrl = 'http://ec2-54-202-217-26.us-west-2.compute.amazonaws.com/';
+        this.generalUrl = 'http://ec2-54-191-225-241.us-west-2.compute.amazonaws.com/';
         /*local test
         private generalUrl = 'http://localhost:51508/';
         /**/

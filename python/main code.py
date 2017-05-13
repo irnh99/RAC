@@ -1,7 +1,13 @@
 import http.client, urllib.parse
 import json
+import RPi.GPIO as GPIO
 import time
 
+#set raspberry
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(3, GPIO.OUT)
+p = GPIO.PWM(3,50)
+p.start(7.5)
 #create object classes
 class Area(object):
     def __init__(self, IdArea, Status, *args, **kwargs):
@@ -24,8 +30,10 @@ while(True):
             a = Area(**area)
 
             if (a.Status):
-                print("abrete")
+                #print("abrete")
+                p.ChangeDutyCycle(4.5)
             else:
-                print("cierrate")
+                #print("cierrate")
+                p.ChangeDutyCycle(10.5)
     time.sleep(10)
     

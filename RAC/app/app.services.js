@@ -16,10 +16,10 @@ require("rxjs/add/operator/map");
 var Services = (function () {
     function Services(http) {
         this.http = http;
-        /* production
-        private generalUrl = 'http://ec2-54-202-217-26.us-west-2.compute.amazonaws.com/';
-        /*local test*/
-        this.generalUrl = 'http://localhost:51508/';
+        /* production*/
+        this.generalUrl = 'http://ec2-54-191-225-241.us-west-2.compute.amazonaws.com/';
+        /*local test
+        private generalUrl = 'http://localhost:51508/';
         /**/
         this.loginUrl = 'Users/Login';
         this.getRoomsUrl = 'Areas/';
