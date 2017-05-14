@@ -1,7 +1,7 @@
 import http.client, urllib.parse
 import json
 from json import JSONEncoder
-##import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time, threading
 
 
@@ -44,23 +44,25 @@ class MyEncoder(JSONEncoder):
         return o.__dict__   
 
 ##general vars
-roomStatus = 10.5
+GPIO.setwarnings(False) 
+roomPreStatus = 0
 idArea = "1"
 areaDetails = None
-#set raspberry
-##GPIO.setmode(GPIO.BOARD)
-##GPIO.setup(3, GPIO.OUT)
-##p = GPIO.PWM(3,50)
-##p.start(7.5)
-#set connection
+##set raspberry
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(3, GPIO.OUT)
+p = GPIO.PWM(3,50)
+p.start(7.5)
+##set connection
 headers = {"Content-type": "application/json"}
-conn = http.client.HTTPConnection('localhost:50509')
+conn = http.client.HTTPConnection('ec2-54-202-173-41.us-west-2.compute.amazonaws.com:80')
 
 
 ##functions
 #check area status
 def CheckAreaStatus():
     global areaDetails
+    global roomPreStatus
     while(True):
         conn.request("GET", "/Areas/Details?idArea=" + idArea, {} ,headers)
         areaResponse = conn.getresponse()
@@ -69,57 +71,18 @@ def CheckAreaStatus():
             areaDetails = Area(**area)
             if (areaDetails.Status):
                print("abrete")
-               roomStatus = 4.5
+               roomStatus = 3.1
             else:
                 print("cierrate")
-                roomStatus = 10.5
-##            p.ChangeDutyCycle(roomStatus)
-        time.sleep(5)       
-                
-#open close method
-def OpenClose(user):
-
-    time.sleep(1)
-    
-    jsonArea = MyEncoder().encode(areaDetails)
-    
-    conn.request("POST", "/Areas/OpenClose", jsonArea ,headers)
-
-    response = conn.getresponse()
-
-    if(response.reason == "OK"):
-        data = response.read()
-        print(data)
-    
-##    accessDetails = Access(user, areaDetails)
-
-#user ReadInput
-def ReadInput():
-    global areaDetails
-    while(True):
-        if(areaDetails is not None):
-            noControl = input()
-            conn.request("GET", "/Users/GetUserByNoControl?noControl=" + noControl, {} ,headers)
-            userResponse = conn.getresponse()
-            if(userResponse.reason == "OK"):
-                user = json.loads(userResponse.read().decode())
-                userDetails = User(**user)
-                userDetails.UserType = UserType(**userDetails.UserType)
-                
-                hasAccessDetails = [HasAccess(**x) for x in areaDetails.HasAccess]
-                
-                if(userDetails.UserType.IdUserType in [x.IdUserType for x in hasAccessDetails]):
-                    OpenClose(userDetails)  
-
-##Check if the user requested local access
+                roomStatus = 7
+            if (roomPreStatus != roomStatus):
+                roomPreStatus = roomStatus
+                p.ChangeDutyCycle(roomStatus)
+        time.sleep(5)
 
 ##trheads
 #start checkroom thread
 statusThread = threading.Thread(target=CheckAreaStatus)
 statusThread.daemon = True
 statusThread.start()
-#local check thread
-inputThread = threading.Thread(target=ReadInput)
-inputThread.daemon = True
-inputThread.start()
 

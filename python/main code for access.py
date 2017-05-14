@@ -49,7 +49,7 @@ idArea = "1"
 areaDetails = None
 #set raspberry
 headers = {"Content-type": "application/json"}
-conn = http.client.HTTPConnection('localhost:50509')
+conn = http.client.HTTPConnection('ec2-54-202-173-41.us-west-2.compute.amazonaws.com:80')
 
 
 ##functions
